@@ -1,0 +1,38 @@
+.header{
+    position : relative;
+}
+.header > .header__carousel{
+    width : 100%;
+    height : 100%;
+    background-color: rgb(252, 247, 247);
+    overflow-x: hidden;
+}
+.header__carousel > .carousel__entire__box{
+    width : 300%;
+    height : 100%;
+    display : flex;
+}
+.carousel__item{
+    flex-grow : 1;
+    height : 100%;
+    border-right : 3px solid black;
+}
+
+/* shift에 관한거!*/
+.carousel__shift__box{
+    position : absolute;
+    width : 75px;
+    height : 25px;
+    left : 50%;
+    bottom : 10px;
+    transform : translateX(-50%);
+    border : 2px solid black;
+
+    display : flex;
+}
+.carousel__shift__box > .shift{
+    flex-grow : 1;
+    height : 100%;
+    border : 1px solid black;
+    cursor: pointer;
+}

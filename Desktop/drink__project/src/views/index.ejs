@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- font-style -->
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+
+    <!-- font-awsome -->
+    <script src="https://kit.fontawesome.com/388ade87ec.js" crossorigin="anonymous"></script>
+
+   <!-- css file -->
+   <link rel="stylesheet" href="../css/reset.css">
+   <link rel="stylesheet" href="../css/container.css">
+   <link rel="stylesheet" href="../css/header.css">
+   <link rel="stylesheet" href="../css/nav.css">
+   <link rel="stylesheet" href="../css/main.css">
+
+   <!-- javascript -->
+   <script defer src="../javascript/carousel.js"></script>
+</head>
+<body>
+    <div class="container">
+        <nav class="nav">
+            <div class="left__slide__menu__box">
+                <div class="user__open__button open__button">
+                    <i class="fa-solid fa-user"></i>
+                </div>
+            </div>
+            <div class="nav__logo">
+                <a href="/index" class="logo__title">Stupping</a>
+            </div>
+            <div class="nav__search">
+                <form action="/drink" method="get">
+                    <div class="search__box">
+                        <input type="search" placeholder="술 이름" name="title" id="title">
+                        <input type="submit" value="ok">
+                    </div>
+                </form>
+            </div>
+            <div class="nav__menu">
+                <ul class="nav__list">
+                    <li class="list">
+                        <a href="/index">home</a>
+                    </li>
+                    <li class="list">
+                        <% if(isAuthenticated){ %> <!--로그인이 된 경우 -->
+                            <a href="/logout" class="nav-link1">logout</a>
+                          <% } else { %>
+                            <a href="/local/index">login</a>
+                          <% } %>
+                    </li>
+                    <li class="list">
+                        <% if(isAuthenticated){ %> <!--로그인이 된 경우 -->
+                            <a href="/my-page/:_id">mypage</a>
+                          <% } else { %>
+                            <a href="/new/index">signup</a>
+                          <% } %>
+                    </li>
+                </ul>
+            </div>
+            <div class="right__slide__menu__box">
+                <div class="menu__open__button open__button">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+            </div>
+        </nav>
+        <header class="header">
+            <div class="header__carousel">
+                <div class="carousel__entire__box">
+                    <div class="carousel__item">
+                        <a href='/drink-test/index'>테스트 페이지</a>
+                    </div>
+                        
+                    <div class="carousel__item">
+                        <a href='/drink-shop/index'>주점 페이지</a>
+                    </div>
+                        
+                    <div class="carousel__item">
+                        <a href='/drink-info/index'>정보 페이지</a>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel__shift__box">
+                <div class="shift"></div>
+                <div class="shift"></div>
+                <div class="shift"></div>
+            </div>
+        </header>
+        <main class="main">
+            <div class="main__header"></div>
+            <div class="main__section">
+                <div class="item">item1</div>
+                <div class="item">item2</div>
+                <div class="item">item3</div>
+                <div class="item">item4</div>
+                <div class="item">item5</div>
+                <div class="item">item6</div>
+                <div class="item">item7</div>
+                <div class="item">item8</div>
+                <div class="item">item9</div>
+                <div class="item">item10</div>
+                <div class="item">item11</div>
+                <div class="item">item12</div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

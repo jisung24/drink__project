@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    술 취향 test page!
+        <form action="/test/process" method="post">
+            <% for(let i = 0; i < questions.length; i++){ %>
+                <p>
+                    <label for="">
+                        <%= questions[i].content %>
+                    </label>
+                    <select name="answer" id="">
+                        <% for(let j = 0; j < questions[i].response.length; j++){ %>
+                            <option value="<%= questions[i].value[j]%>"><%= questions[i].response[j]%></option>
+                        <% } %>
+                    </select>
+                </p>
+            <% } %>
+            <input type="submit" value="질문등록 완료!">
+        </form>
+</body>
+</html>

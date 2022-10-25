@@ -1,0 +1,16 @@
+.container{
+    font-family: 'Ubuntu', sans-serif;
+    position : relative;
+    left : 50%;
+    transform : translateX(-50%);
+    width : 85vw;
+    height : 150vh;
+    /* border : 2px solid black; */
+
+    display : grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 5fr 90vh;
+}
+.container > *{
+    border : 2px solid black;
+}

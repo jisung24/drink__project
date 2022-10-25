@@ -92,18 +92,24 @@
         <main class="main">
             <div class="main__header"></div>
             <div class="main__section">
-                <div class="item">item1</div>
-                <div class="item">item2</div>
-                <div class="item">item3</div>
-                <div class="item">item4</div>
-                <div class="item">item5</div>
-                <div class="item">item6</div>
-                <div class="item">item7</div>
-                <div class="item">item8</div>
-                <div class="item">item9</div>
-                <div class="item">item10</div>
-                <div class="item">item11</div>
-                <div class="item">item12</div>
+                <% for(let i=0; i < 12; i++){ %>
+                    <div class="item item<%= i %>">
+                        <div class="item__img">
+                            <img class="img" src="../uploads/images/<%= [i]%>.BMP" />
+                        </div>
+                            
+                            
+                           
+                        <div class="item__contents">
+                            <% for(let j = 0; j < 6; j++){ %>
+                                <div class="contents">
+                                    <span class="content contents__property"><%= keyArr[j] %></span>
+                                    <span class="content contents__value"><%= drink[i][keyArr[j]] %></span>
+                                </div>
+                            <% } %>
+                        </div>
+                    </div>
+                <% } %>
             </div>
         </main>
     </div>

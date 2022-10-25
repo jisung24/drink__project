@@ -4,20 +4,28 @@ const router = express.Router(); // app.get vs router.get
 // router 모듈화가 가능하게 해줌.. app.method => 모듈화가 불가능...!!
 const Question = require('../models/Question.js');
 const User = require('../models/User.js');
-// const Drink = require('../models/Drink.js');
+const Drink = require('../models/Drink.js');
 
 module.exports = () => {
     //1. index GET : /index
     router.get('/index', async(req,res) => {
         try{
-            let indexPage = await res.status(202).render('index.ejs');
+            let key = await Drink.findOne().select('-_id -id -sweet -sour -body -cool');
+            let drink = await Drink.find().limit(12);
+            let keyArr = Object.keys(key.toJSON());
+            
+            let mainPage = await res.status(200)
+            .render('index.ejs', {
+                drink : drink,
+                keyArr : keyArr,
+            });
         }catch(err){
             return console.log(err);
         }
     })
 
     // 2. 전통주 취향 test GET /drink-test/index
-    router.get('/drink-test/index', async(req,res) => {
+    router.get('/drink-test/index',login, async(req,res) => {
         // db안에 있는 질문들을 전부 불러와서 여기다가 띄울거야!! 
 
         try{

@@ -5,6 +5,7 @@ const router = express.Router(); // app.get vs router.get
 const Question = require('../models/Question.js');
 const User = require('../models/User.js');
 const Drink = require('../models/Drink.js');
+const Shop = require('../models/Shop.js');
 
 module.exports = () => {
     //1. index GET : /index
@@ -44,7 +45,11 @@ module.exports = () => {
     // 3. 전통주 주점 GET /drink-shop/index
     router.get('/drink-shop/index', async(req,res) => {
         try{
-            let drinkShopPage = await res.status(202).render('drinkShop.ejs');
+            Shop.find( async(에러, 결과)=>{  
+                console.log(결과);
+                let drinkShopPage = await res.status(202).render('drinkShop.ejs', { data : 결과 });    
+                 //db에서 가져온 결과를 posts라는 이름으로 ejs에 넣음
+            })
         }catch(err){
             return console.log(err);
         }

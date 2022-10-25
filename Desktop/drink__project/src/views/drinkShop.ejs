@@ -7,6 +7,13 @@
     <title>Document</title>
 </head>
 <body>
-    샵!
+    <div class="resultContent">
+        <% for (var i = 0; i < data.length ; i ++) { %>    
+            <h2 class="name">가게명 : <%= data[i].name %></h2>
+            <p class="address">주소 : <%= data[i].address %></p>
+            <p class="phone">전화번호 : <%= data[i].phone %></p>
+            <p class="menu">메뉴 : <%= data[i].menu %></p>
+        <% } %> 
+</div>
 </body>
 </html>

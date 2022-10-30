@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>pagination example</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/paginationjs/2.1.4/pagination.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/paginationjs/2.1.4/pagination.css"/>
+</head>
+<body>
+
+<div>
+    <section>
+        <div id="data-container">
+
+        </div>
+        
+        <div id="pagination">
+            <div id="takit">
+                <li>데이타</li>
+                <li><%= data %></li>
+                <% for (var i = 0; i < data.length; i++) { %>
+                    <p><h3><class="title">주점명 : <%= data[i].name %> </h3></p>
+                    <p class="img">주소 : 주소 : <%= data[i].address %> </p>
+                    <!-- <h2 class="SeoulTitle">서울 주점: <%= data[i].name %></h2> --><% } %> 
+            </div>
+        </div>
+    </section>
+</div>
+
+    <div id="takit_">
+        <!--  data %> -->
+            <%= data %>
+    </div>
+
+    <!-- <%= data %> -->
+    <!-- console.log(storeData); -->
+
+
+<script>
+    $title=document.querySelector(".title");
+    console.log("타이틀",$title)
+    //console.log(storeData);
+    
+    //console.log(data);
+    //console.log("이게데이터",document.getElementById('#takit_'));
+    $takit=document.getElementById('takit_').textContent;
+    console.log($takit)
+    console.log(typeof($takit));
+    console.log($takit.length);
+    var $takit_to_json=JSON.parse($takit);
+    console.log(typeof($takit_to_json));
+    // 여기로 data를 가져오기만 하면 된다.
+    $dattaa=[{name:'첫번째', address:' 헬로주소'},{name:'두번째', address:' 헬로주소'}]
+    //name과 address를 {} 에 담으면.....
+    //$dattaa=$takit
+    $(function () {
+        let container = $('#pagination');
+        container.pagination({
+            dataSource:$dattaa,
+            
+            callback: function (data, pagination) {
+                var dataHtml = '<ul>';
+                $.each(data, function (index, item) {
+                    dataHtml += '<li>' + item.name +item.address + '</li>';
+                
+                });
+                dataHtml += '</ul>';
+                $("#data-container").html(dataHtml);
+            }
+        })
+    })
+</script>
+</body>
+</html>

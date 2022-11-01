@@ -35,5 +35,7 @@ app.use('/api/auth', authRouter(passport(app)));
 app.use('/shop', shopRouter());
 app.use('/test', testRouter());
 
-
+app.get('/', async(req,res) => {
+    res.render('testPage.ejs');
+})
 module.exports = app;

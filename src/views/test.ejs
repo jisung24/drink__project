@@ -65,7 +65,7 @@
         <main class="section testSection">
             <div class="test__start">
                 
-                <form action="/result" method="get">
+                <div class="form">
                     <% for(let i = 0; i < contents.length; i++){ %>
                         <div class="question">
                             <div class="question__header">
@@ -75,30 +75,26 @@
                                 </h2>
                             </div>
                             <div class="question__main">
-                                <div class="answer__box">
-                                    <div class="answer">
-                                        <select name="question" id="">
-                                            <option value="1">1</option>
-                                            <option value="2">2</option>
-                                            <option value="3">3</option>
-                                            <option value="4">4</option>
-                                        </select>
-                                        
-                                    </div>
-                                </div>
+                                <select name="question" id="" class="select">
+                                    <% for(let j = 0; j < 4; j++){ %>
+                                        <option value="<%= j + 1 %>"><%= j + 1 %></option>
+                                    <% } %>
+                                </select>
                             </div>
                             <div class="question__footer">
-                                <% let button = ["button", "button", "button", "submit"]; %>
+                                <% let button = ["button", "button", "button", "button"]; %>
                                 <% let value = ["다음", "다음", "다음", "제출"]; %>
-                                <% let className = ["next", "next", "next", "submit"]; %>
+                                <% let className = ["next", "next", "next", "result"]; %>
                                     <input type="<%= button[i] %>" value="<%= value[i] %>" class='button <%= className[i] %>'>
                             </div>
                         </div>
                     <% } %>
                     
-                </form>
+                    </div>
             </div>
-            <div class="test__result"></div>
+            <div class="test__result">
+                
+            </div>
         </main>
     </div>
 </body>

@@ -56,6 +56,9 @@ const drinkSchema = new mongoose.Schema(
         },
         meterial : String,
         company : String,
+        flavour_type : {
+            type : Number,
+        }
     },
     {
         timestamps : true,

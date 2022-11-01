@@ -128,8 +128,27 @@ module.exports = () => {
         try{
             console.log('api 호출!!');
             const { question } = req.query;
-            console.log(question);
-            console.log(req.query);
+            
+            let result = question.map((value) => +value);
+            console.log(result);
+            let questions = await Question.find({});
+            let findDrink = await Drink.find({
+                $and : [
+                    {sweet : result[0]},
+                    {sour : result[1]},
+                    {body : result[2]},
+                    {cool : result[3]},
+                ]
+            })
+            console.log(findDrink[0])
+            // 일단 flavor type을 띄우기!! => ajax로
+            let flavour = findDrink[0].flavour_type;
+            // return res.json(flavour);
+            console.log(flavour);
+            return res.render('test.ejs', {
+                contents : questions,
+                type : flavour,
+            })
         }catch(err){
             return console.log(err);
         }

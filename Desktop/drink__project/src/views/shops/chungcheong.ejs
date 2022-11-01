@@ -5,10 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-   <link rel="stylesheet" href="../public/shop.css">
    <!-- 페이징 테스트 -->
    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
    <!--  -->
+   <link rel="stylesheet" href="../css/section/resultSection.css">
 </head>
 <body>
 
@@ -18,26 +18,37 @@
     <div>
         <button type="button" id="chungcheong" onClick="location.href='test'">전체보기</button> 
     </div>
+    <div class="sortBox">
+        <ul class="sort sortByFood">
+            <!-- fetch => query로 보내기! -->
+            <li class="food fish">
+                <span>🐟</span>
+            </li>
+            <li class="food meat">
+                <!-- <i class="fa-regular fa-meat"></i> -->
+                <span>🍖</span>
+            </li>
+            <li class="food jungoal">
+                <span>🍲</span>
+            </li>
+            <li class="food cheese">
+                <span>🧀</span>
+            </li>
+            <li class="food salad">
+                <span>🥗</span>
+            </li>
+        </ul>
+
+    </div>
     <div>
-        <% for (var i=0; i < data.length; i++) { %>
-            <h2 class="title">주점명 : <% if(data[i].address.includes("충남")){%>
-                    <p>
-                        <%=data[i].name%>
-                    </p>
-                    <%} %>
-            </h2>
-            <p class="img">주소 : <% if(data[i].address.includes("충남")){%>
-                    <p>
-                        <%=data[i].address%>
-                    </p>
-                    <p>
-                        <%=data[i].menu%>
-                    </p>
-                    <%} %>
-            </p>
-            <!-- <h2 class="SeoulTitle">서울 주점: <%= data[i].name %></h2> -->
-            <% } %>
-        
+        <% for (var i = 0; i < data.length; i++) { %>
+        <h2 class="title">주점명 : <% if(data[i].address.includes("충남")){%><p><%=data[i].name%></p><%} %></h2>
+        <p class="address">주소 : <% if(data[i].address.includes("충남")){%><p><%=data[i].address%></p><%} %> </p>
+        <p class="phone">전화번호 : <% if(data[i].address.includes("충남")){%><p><%=data[i].phone%></p><%} %> </p>
+        <p class="menu">메뉴 : <% if(data[i].address.includes("충남")){%><p><%=data[i].menu%></p><%} %> </p>
+        <p class="img">이미지 : <% if(data[i].address.includes("충남")){%><p><%=data[i].link%></p><%} %> </p>
+        <!-- <h2 class="SeoulTitle">서울 주점: <%= data[i].name %></h2> -->
+        <% } %> 
     </div>
 
 

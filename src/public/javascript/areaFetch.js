@@ -6,7 +6,7 @@ const areaArr = [];
 area.forEach((value, index) => {
     areaArr.push(value.getAttribute('data-id'));
     value.addEventListener('click', () => {
-        alert(areaArr[index])
+        // alert(areaArr[index])
         areaFetch(areaArr[index]);
     })
 })

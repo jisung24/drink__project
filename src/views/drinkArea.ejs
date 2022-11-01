@@ -12,10 +12,10 @@
     <!-- font-awsome -->
     <script src="https://kit.fontawesome.com/388ade87ec.js" crossorigin="anonymous"></script>
     <!-- css -->
-    <link rel="stylesheet" href="../css">
-    <link rel="stylesheet" href="../css/shop.css">
-    <link rel="stylesheet" href="../css/container.css">
-    <link rel="stylesheet" href="../css/indexPage/nav.css">
+    <link rel="stylesheet" href="/css/section/area.css">
+    <!-- <link rel="stylesheet" href="/css/shop.css"> -->
+    <link rel="stylesheet" href="/css/container.css">
+    <link rel="stylesheet" href="/css/indexPage/nav.css">
     <!-- nav까지는 통일...!! ==> main내부 section부분은 폴더마다 다르게 할 거.. -->
 
     <script defer src="../javascript/areaFetch.js"></script>
@@ -72,9 +72,13 @@
                     </div>
                 </header>
                 <main class="area__main">
-                    <div class="area__box">
-                        dsdsds
-                    </div>
+                    <% for(let i = 0; i< area.length; i++){ %>
+                        <div class="area__box">
+                            <li><%= area[i].name%></li>
+                            <li><%= area[i].address%></li>
+                            <li><%= area[i].phone%></li>
+                        </div>
+                    <% } %>
                 </main>
             </div>
         </main>

@@ -126,28 +126,14 @@ module.exports = () => {
     // test값 넘기기
     router.get('/result', async(req,res) => {
         try{
+            console.log('api 호출!!');
             const { question } = req.query;
-            
-            let numberResult = question.map((value) => +value);
-            // spread연산자! => 단 신 바 청 하나씩!! 
-            let [sweet, sour, body, cool] = numberResult;
-            console.log(`단 >> ${sweet}`); 
-            console.log(`신 >> ${sour}`); 
-            console.log(`바 >> ${body}`); 
-            console.log(`청 >> ${cool}`); 
-            let drink = await Drink.find({
-                $and : [
-                    {sweet : sweet},
-                    {sour : sour},
-                    {body : body},
-                    {cool : cool},
-                ]
-            });
-            
-            console.log(drink); // 
+            console.log(question);
+            console.log(req.query);
         }catch(err){
             return console.log(err);
         }
+        
     })
     return router;
 }

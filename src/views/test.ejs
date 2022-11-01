@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="../css/section/testSection.css">
     <!-- nav까지는 통일...!! ==> main내부 section부분은 폴더마다 다르게 할 거.. -->
 
-    <script src=""></script>
+    <script defer src="../javascript/quizCarousel.js"></script>
 </head>
 <body>
     <div class="container">
@@ -64,6 +64,7 @@
         </nav>
         <main class="section testSection">
             <div class="test__start">
+                
                 <form action="/result" method="get">
                     <% for(let i = 0; i < contents.length; i++){ %>
                         <div class="question">
@@ -76,15 +77,13 @@
                             <div class="question__main">
                                 <div class="answer__box">
                                     <div class="answer">
-                                        <% let ansArr = ["매우 싫다","싫다","중간","좋다","매우 좋다"] %>
-                                        <% for(let i = 0; i < 5; i++){ %>
-                                            <p>
-                                                <label for="question<%= i %>"><%= ansArr[i] %></label>
-                                            </p>
-                                            <p>
-                                                <input type="radio" name="question" id="question<%= i %>" value="<%= i + 1 %>">
-                                            </p>
-                                        <% } %>
+                                        <select name="question" id="">
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                        </select>
+                                        
                                     </div>
                                 </div>
                             </div>

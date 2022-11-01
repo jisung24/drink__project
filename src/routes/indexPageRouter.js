@@ -87,17 +87,6 @@ module.exports = () => {
         }
     })
 
-    // 6. 전통주점 GET /drink-shop/index
-    router.get('/drink-shop/index', async(req,res) => {
-        try{
-            let shop = await res.status(200).render('drinkShop.ejs',
-            {
-                isLogined : isLogined(req.user),
-            });
-        }catch(err){
-            return console.log(err);
-        }
-    })
 
     // 7. 전통주 홍보 GET /drink-ex/index
     router.get('/drink-ex/index', async(req,res) => {

@@ -6,7 +6,7 @@ const next = document.querySelectorAll('.next');
 next.forEach((value, index) => {
     value.addEventListener('click', () => {
         form.style.transform = `translateX(${(index + 1) * -25}%)`
-        form.style.transition = `all 0.5s`;
+        form.style.transition = `all 0.2s`;
     })
 })
 
@@ -24,6 +24,7 @@ button.forEach((value, index) => {
         if(valueArr.length === 4){
             goFetch(...valueArr);
         }
+
     })
 })
 
@@ -31,6 +32,25 @@ async function goFetch(...arr){
     let num = arr.map((value) => +value);
     let go = await fetch(`/test/result?question=${num[0]}&question=${num[1]}&question=${num[2]}&question=${num[3]}`)
     .then((res) => res.json());
+    go === undefined ? alert('undefined!!') : console.log(go);
+
+    let result = document.querySelector('.result__text');
+    let div = document.createElement("div");
+    div.classList.add("title");
+
+    let text = document.createTextNode(`flavour type >> ${go}`);
+    let text2 = document.createElement("a");
+    let nextLine = document.createElement("br");
+    let text3 = document.createTextNode(`${go}type 보러가기!!`);
+
+    text2.appendChild(text3);
+    text2.setAttribute("href", "/index");
+    div.appendChild(text); 
+    div.appendChild(nextLine);
+    div.appendChild(text2); 
+
+    result.appendChild(div);
+    // result.appendChild(div);
     
 
 }

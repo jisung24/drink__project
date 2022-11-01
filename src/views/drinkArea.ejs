@@ -1,24 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>전국 전통주점</title>
     <!-- font-style -->
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
 
     <!-- font-awsome -->
     <script src="https://kit.fontawesome.com/388ade87ec.js" crossorigin="anonymous"></script>
     <!-- css -->
-    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css">
+    <link rel="stylesheet" href="../css/shop.css">
     <link rel="stylesheet" href="../css/container.css">
     <link rel="stylesheet" href="../css/indexPage/nav.css">
-    <link rel="stylesheet" href="../css/section/testSection.css">
     <!-- nav까지는 통일...!! ==> main내부 section부분은 폴더마다 다르게 할 거.. -->
 
-    <script defer src="../javascript/quizCarousel.js"></script>
+    <script defer src="../javascript/areaFetch.js"></script>
 </head>
+
 <body>
     <div class="container">
         <nav class="nav">
@@ -28,7 +30,7 @@
                 </div>
             </div>
             <div class="nav__logo">
-                <a href="/index" class="logo__title">Stupping</a>
+                <a href="/index" class="logo__title">stupping</a>
             </div>
             <div class="nav__search">
                 <form action="/drink" method="get">
@@ -62,42 +64,22 @@
                 </div>
             </div>
         </nav>
-        <main class="section testSection">
-            <div class="test__start">
-                
-                <div class="form">
-                    <% for(let i = 0; i < contents.length; i++){ %>
-                        <div class="question">
-                            <div class="question__header">
-                                <h2 class="q">
-                                    <p>Q<%=  i + 1 %></p>
-                                    <p><%= contents[i].contents %></p>
-                                </h2>
-                            </div>
-                            <div class="question__main">
-                                <select name="question" id="" class="select">
-                                    <% for(let j = 0; j < 4; j++){ %>
-                                        <option value="<%= j + 1 %>"><%= j + 1 %></option>
-                                    <% } %>
-                                </select>
-                            </div>
-                            <div class="question__footer">
-                                <% let button = ["button", "button", "button", "button"]; %>
-                                <% let value = ["다음", "다음", "다음", "제출"]; %>
-                                <% let className = ["next", "next", "next", "result"]; %>
-                                    <input type="<%= button[i] %>" value="<%= value[i] %>" class='button <%= className[i] %>'>
-                            </div>
-                        </div>
-                    <% } %>
-                    
+        <main class="section">
+            <div class="area__container">
+                <header class="area__header">
+                    <div class="title">
+                        <h2>전국 전통주점 찾기</h2>
                     </div>
-            </div>
-            <div class="test__result">
-                <div class="result__text"></div>
-                <div class="result__drink"></div>
+                </header>
+                <main class="area__main">
+                    <div class="area__box">
+                        dsdsds
+                    </div>
+                </main>
             </div>
         </main>
     </div>
-</body>
-</html>
 
+</body>
+
+</html>

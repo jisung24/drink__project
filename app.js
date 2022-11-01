@@ -32,10 +32,10 @@ app.use('/', indexPageRouter());
 app.use('/drink', drinkRouter());
 app.use('/admin', questionRouter());
 app.use('/api/auth', authRouter(passport(app)));
-app.use('/shop', shopRouter());
+app.use('/drink-shop', shopRouter());
 app.use('/test', testRouter());
 
-app.get('/', async(req,res) => {
-    res.render('testPage.ejs');
-})
+// app.get('/', async(req,res) => {
+//     res.render('testPage.ejs');
+// })
 module.exports = app;

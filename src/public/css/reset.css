@@ -90,3 +90,9 @@ body::-webkit-scrollbar-thumb {
 body::-webkit-scrollbar-track {
 	background: rgb(242, 242, 242);
 }
+
+html,body{
+	margin : 0;
+	padding : 0;
+	box-sizing: border-box;
+}

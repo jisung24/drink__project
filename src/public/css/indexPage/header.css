@@ -35,7 +35,7 @@
     top : 50%;
     width : 70%;
     height : 50%;
-    border : 1px solid black;
+    /* border : 1px solid black; */
     transform: translate(-50%, -50%);
     display : flex;
     justify-content: center;
@@ -48,7 +48,7 @@
 .carousel__item > .carousel__img{
     flex-grow : 2;
     width : 70%;
-    border : 2px solid black;
+    /* border : 2px solid black; */
     background-color: rgb(166, 210, 249);
 }
 .carousel__item > .carousel__img{

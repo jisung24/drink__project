@@ -87,17 +87,6 @@ module.exports = () => {
         }
     })
 
-    // 6. 전통주점 GET /drink-shop/index
-    router.get('/drink-shop/index', async(req,res) => {
-        try{
-            let shop = await res.status(200).render('drinkShop.ejs',
-            {
-                isLogined : isLogined(req.user),
-            });
-        }catch(err){
-            return console.log(err);
-        }
-    })
 
     // 7. 전통주 홍보 GET /drink-ex/index
     router.get('/drink-ex/index', async(req,res) => {
@@ -126,28 +115,33 @@ module.exports = () => {
     // test값 넘기기
     router.get('/result', async(req,res) => {
         try{
+            console.log('api 호출!!');
             const { question } = req.query;
             
-            let numberResult = question.map((value) => +value);
-            // spread연산자! => 단 신 바 청 하나씩!! 
-            let [sweet, sour, body, cool] = numberResult;
-            console.log(`단 >> ${sweet}`); 
-            console.log(`신 >> ${sour}`); 
-            console.log(`바 >> ${body}`); 
-            console.log(`청 >> ${cool}`); 
-            let drink = await Drink.find({
+            let result = question.map((value) => +value);
+            console.log(result);
+            let questions = await Question.find({});
+            let findDrink = await Drink.find({
                 $and : [
-                    {sweet : sweet},
-                    {sour : sour},
-                    {body : body},
-                    {cool : cool},
+                    {sweet : result[0]},
+                    {sour : result[1]},
+                    {body : result[2]},
+                    {cool : result[3]},
                 ]
-            });
-            
-            console.log(drink); // 
+            })
+            console.log(findDrink[0])
+            // 일단 flavor type을 띄우기!! => ajax로
+            let flavour = findDrink[0].flavour_type;
+            // return res.json(flavour);
+            console.log(flavour);
+            return res.render('test.ejs', {
+                contents : questions,
+                type : flavour,
+            })
         }catch(err){
             return console.log(err);
         }
+        
     })
     return router;
 }

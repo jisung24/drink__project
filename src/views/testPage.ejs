@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="test">
+        <select name="price" id="">
+            <option value="1000">1000</option>
+            <option value="2000">2000</option>
+            <option value="3000">3000</option>
+        </select>
+        <button>
+            제출
+        </button>
+
+        <div class="hello"></div>
+    </div>
+
+    <script>
+        const button = document.querySelector('button');
+        const select_value = document.querySelector('select');
+
+        button.addEventListener('click',() => {
+            go(select_value.options[select_value.selectedIndex].text);
+        })
+
+
+        async function go(value){
+            let goFetch = await fetch(`/test/result?question=${value}`).then((res) => res.json());
+            console.log(goFetch);
+            console.log(typeof goFetch);
+           
+            let divBox = document.createElement("div");
+            divBox.classList.add("fetch__class");
+            let text = document.createTextNode(goFetch);
+            divBox.appendChild(text);
+
+
+            document.body.appendChild(divBox);
+        }
+    </script>
+</body>
+</html>

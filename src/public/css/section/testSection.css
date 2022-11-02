@@ -6,25 +6,27 @@
     min-width : 30%;
     max-width: 30%;
     /* border : 2px solid black; */
-    overflow-x: hidden
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    border-radius : 10px;
+    overflow-x: hidden;
 }
-.test__start > form{
+.test__start > .form{
     width : 400%;
     height : 100%;
-    /* border : 1px solid black; */
+    /* /* border : 1px solid black; */ */
     display : flex;
     /* overflow-x: hidden; */
 }
-form > .question{
+.form > .question{
     flex-basis : 100%;
     flex-grow : 1;
-    border : 2px solid black;
+    /* border : 2px solid black; */
 
     display : flex;
     flex-direction: column;
 }
 .question > *{
-    border : 1px solid black;
+    /* border : 1px solid black; */
 }
 /* 질문 header!! */
 .question > .question__header{
@@ -49,83 +51,25 @@ form > .question{
     min-width: 100%;
     position : relative;
 }
-.question__main > .answer__box{
-    width : 80%;
-    height : 80%;
-    position : absolute;
-    left : 50%;
-    top : 50%;
-    transform : translate(-50%, -50%);
-    margin : 0 auto;
-}
-.answer__box > .answer{
-    width : 80%;
-    height : 80%;
-    /* border : 1px solid black; */
-    display : flex;
-    flex-direction: column;
+
+/* ==== << select box 꾸미기 >> ====  */
+select, option{
+    /* border : 2px solid black; */
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    border-radius : 10px;
+    height : 50px;
+    width : 100%;
     text-align: center;
-    margin: 0 auto;
-}
-.answer > select{
-    height : 20px;
-    /* flex-grow : 1; */
-}
-/* ==== << select >> ====  */
-:root {
-    /* --background-gradient: linear-gradient(30deg, #f39c12 30%, #f1c40f); */
-    --gray: #34495e;
-    --darkgray: #2c3e50;
-  }
-  
-  select {
-    /* Reset Select */
-    appearance: none;
-    outline: 0;
-    border: 0;
-    box-shadow: none;
-    /* Personalize */
-    flex: 1;
-    padding: 0 1em;
-    color: #fff;
-    background-color: var(--darkgray);
-    background-image: none;
+    font-size : 1.3rem;
+    background-color: #9bcdfb;
+    color: white;
     cursor: pointer;
-  }
-  /* Remove IE arrow */
-  select::-ms-expand {
-    display: none;
-  }
-  /* Custom Select wrapper */
-  .select {
-    position: relative;
-    display: flex;
-    width: 20em;
-    height: 40px;
-    border-radius: .25em;
-    overflow: hidden;
-  }
-  /* Arrow */
-  .select::after {
-    content: '\25BC';
-    position: absolute;
-    top: 0;
-    right: 0;
-    padding: 1em;
-    background-color: #34495e;
-    transition: .25s all ease;
-    pointer-events: none;
-  }
-  /* Transition */
-  .select:hover::after {
-    color: #f39c12;
-  }
-  
-  /* Other styles*/
-  body {
-    color: #fff;
-    background: var(--background-gradient);
-  }
+}
+select:hover, option:hover{
+    transition: all 0.5s;
+    background-color: #9bcdfb;
+    color : rgb(115, 143, 220)
+}
 
 .question > .question__footer{
     flex-grow : 1;
@@ -163,4 +107,35 @@ form > .question{
 .testSection > .test__result{
     min-width: 70%;
     max-width : 70%;
+
+    display : flex;
+    flex-direction: column;
+}
+.test__result > .result__text{
+    flex-grow : 3;
+    /* border : 2px solid black; */
+    display : flex;
+    justify-content: center;
+    align-items: center;
+}
+.result__text > .title{
+    width : fit-content;
+    height : fit-content;
+    box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+    font-size : 2.3rem;
+    line-height: 1;
+    font-weight : 800;
+    font-style : italic;
+    padding : 8px 12px;
+    border-radius : 5px;
+}
+.result__text a{
+    text-decoration: none;
+    color : yellow;
+}
+.title span{
+    /* color : blue; */
+}
+.test__result > .result__drink{
+    flex-grow : 7;
 }

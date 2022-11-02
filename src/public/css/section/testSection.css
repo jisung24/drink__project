@@ -5,14 +5,15 @@
 .testSection > .test__start{
     min-width : 30%;
     max-width: 30%;
-    border : 2px solid black;
-    overflow-x: scroll;
+    /* border : 2px solid black; */
+    overflow-x: hidden
 }
 .test__start > form{
     width : 400%;
     height : 100%;
-    border : 1px solid black;
+    /* border : 1px solid black; */
     display : flex;
+    /* overflow-x: hidden; */
 }
 form > .question{
     flex-basis : 100%;
@@ -66,56 +67,65 @@ form > .question{
     text-align: center;
     margin: 0 auto;
 }
-.answer > *{
-    flex-grow : 1;
+.answer > select{
+    height : 20px;
+    /* flex-grow : 1; */
 }
-/* ==== << 라디오 버튼 >> ====  */
-label {
-    font-size: 13px;
-    line-height: 1rem;
-    padding: 0.1em 0.2em;
-}
-
-span {
-    vertical-align: middle;
-}
-
-[type="radio"] {
-    vertical-align: middle;
+/* ==== << select >> ====  */
+:root {
+    /* --background-gradient: linear-gradient(30deg, #f39c12 30%, #f1c40f); */
+    --gray: #34495e;
+    --darkgray: #2c3e50;
+  }
+  
+  select {
+    /* Reset Select */
     appearance: none;
-    border: max(2px, 0.1em) solid gray;
-    border-radius: 50%;
-    width: 1.25em;
-    height: 1.25em;
-    transition: border 0.5s ease-in-out;
-}
-
-[type="radio"]:checked {
-    border: 0.4em solid tomato;
-}
-
-[type="radio"]:focus-visible {
-    outline-offset: max(2px, 0.1em);
-    outline: max(2px, 0.1em) dotted tomato;
-}
-
-[type="radio"]:hover {
-    box-shadow: 0 0 0 max(4px, 0.2em) lightgray;
-    cursor: pointer;
-}
-
-[type="radio"]:disabled {
-    background-color: lightgray;
+    outline: 0;
+    border: 0;
     box-shadow: none;
-    opacity: 0.7;
-    cursor: not-allowed;
-}
-
-[type="radio"]:disabled+span {
-    opacity: 0.7;
-    cursor: not-allowed;
-}
-
+    /* Personalize */
+    flex: 1;
+    padding: 0 1em;
+    color: #fff;
+    background-color: var(--darkgray);
+    background-image: none;
+    cursor: pointer;
+  }
+  /* Remove IE arrow */
+  select::-ms-expand {
+    display: none;
+  }
+  /* Custom Select wrapper */
+  .select {
+    position: relative;
+    display: flex;
+    width: 20em;
+    height: 40px;
+    border-radius: .25em;
+    overflow: hidden;
+  }
+  /* Arrow */
+  .select::after {
+    content: '\25BC';
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 1em;
+    background-color: #34495e;
+    transition: .25s all ease;
+    pointer-events: none;
+  }
+  /* Transition */
+  .select:hover::after {
+    color: #f39c12;
+  }
+  
+  /* Other styles*/
+  body {
+    color: #fff;
+    background: var(--background-gradient);
+  }
 
 .question > .question__footer{
     flex-grow : 1;

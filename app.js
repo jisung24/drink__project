@@ -9,7 +9,7 @@ const authRouter = require('./src/routes/authRouter.js'); // 인증관련 라우
 const drinkRouter = require('./src/routes/drinkRouter.js');
 const questionRouter = require('./src/routes/admin/question.js');
 const shopRouter =require('./src/routes/shopRouter');
-
+const testRouter = require('./src/routes/testRouter');
 const app = express();
 
 // set함수로 프로젝트에 필요한 변수 setting!
@@ -32,7 +32,7 @@ app.use('/drink', drinkRouter());
 app.use('/admin', questionRouter());
 app.use('/api/auth', authRouter(passport(app)));
 app.use('/shop', shopRouter());
-
+app.use('/test', testRouter());
 app.get('/items', (req,res) => {
     console.log(`api호출!`);
     console.log(req.query);

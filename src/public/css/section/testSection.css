@@ -13,8 +13,9 @@
 .test__start > .form{
     width : 400%;
     height : 100%;
-    /* border : 1px solid black; */
+    /* /* border : 1px solid black; */ */
     display : flex;
+    /* overflow-x: hidden; */
 }
 .form > .question{
     flex-basis : 100%;

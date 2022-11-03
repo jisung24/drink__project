@@ -13,3 +13,5 @@ for(let key in user){
     b.push(user[key].age);
 }
 console.log(b);
+
+console.log(`${25 * 3}\%`);

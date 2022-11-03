@@ -1,6 +1,6 @@
 # **전통주(Stupping)**
-<img width="38%" height="300" alt="response" src="https://user-images.githubusercontent.com/85999976/199455170-222ecf91-e0b8-4790-b1ae-8acd5a3a9efb.png">
-<img width="60%"  height="300" alt="indexpage" src="https://user-images.githubusercontent.com/85999976/199455801-f73f29be-446e-45ee-a28f-bf2d75bd40c0.png">
+<img width="20%" height="300" alt="response" src="https://user-images.githubusercontent.com/85999976/199455170-222ecf91-e0b8-4790-b1ae-8acd5a3a9efb.png">
+<img width="40%"  height="300" alt="indexpage" src="https://user-images.githubusercontent.com/85999976/199455801-f73f29be-446e-45ee-a28f-bf2d75bd40c0.png">
 
 # **목차**
 
@@ -19,6 +19,7 @@
 
 ## **3. 구현 기능**
 - **`REST API`**
+    - 메인페이지(GET /index)
     - 
 ## **4. 배운 점, 아쉬운 점**
 - **`프로젝트 전체`**
@@ -46,4 +47,14 @@
     - **`배웠던 점`**
         - `다양한 쿼리문 사용법을 익힘`
         - `MVC패턴을 이용한 개발`
-## **5. 라이센스**
+## **5. 향후 보완점**
+- `이번 사이트에는 반복되는 HTML박스들이 너무나 많습니다.`
+    - `REACT를 사용하여 컴포넌트를 잘 만들어서 똑같은 사이트를 만들어보고 싶습니다.`
+    - `NODEJS, EJS는 너무 SCR성향이 강했는데 리엑트를 사용해서 CSR을 구현해보고 싶습니다.`
+
+- `MULTER, mongoose이미지 날짜 스키마,  날짜별 정렬기능 넣어보고 싶습니다.`
+- `디자인을 좀 더 정교하게 만져보고 싶습니다.`
+
+## **6. 최종 결론**
+- ### **`자바스크립트를 잘 하자!!!!!`**
+- ### **`프레임워크를 사용하는 이유를 깨닫는 것이 중요하다.`**

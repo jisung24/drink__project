@@ -1,6 +1,6 @@
 # **전통주(Stupping)**
 <img width="20%" height="300" alt="response" src="https://user-images.githubusercontent.com/85999976/199455170-222ecf91-e0b8-4790-b1ae-8acd5a3a9efb.png">
-<img width="40%"  height="300" alt="indexpage" src="https://user-images.githubusercontent.com/85999976/199455801-f73f29be-446e-45ee-a28f-bf2d75bd40c0.png">
+<img width="50%"  height="300" alt="indexpage" src="https://user-images.githubusercontent.com/85999976/199455801-f73f29be-446e-45ee-a28f-bf2d75bd40c0.png">
 
 # **목차**
 
@@ -19,8 +19,29 @@
 
 ## **3. 구현 기능**
 - **`REST API`**
-    - 메인페이지(GET /index)
-    - 
+    - index
+        - 메인페이지(GET /index)(
+        - 술 취향test(GET /drinks-test/index)
+        - 전통주점(GET /drinks-shop/index)
+        - 전통주설명(GET /drinks-ex/index)
+        - 로그인페이지(GET /auth/local/index) => 수정필요
+        - 회원가입페이지(GET /auth/new/index) => 수정필요
+        - 술 정렬(GET /drinks ? sort = "food") => 음식으로 정렬
+
+    - auth
+        - 로그인(POST /api/auth/local-process)
+        - 회원가입(POST /api/auth/new-process)
+    - drink
+        - 술 전체조회(GET /drinks)
+        - 술 등록(POST /drinks)
+        - 술 하나조회(GET /drinks/:id)
+        - 술 하나수정(PUT /drinks/:id)
+        - 술 하나삭제(delete /drinks/:id)
+    - users
+        - 유져 전체조회(GET /users)
+        - 유져 생성(POST /users)
+        - 유져 수정(PUT /users/:id)
+        - 유져 삭제(DELETE /users/:id)
 ## **4. 배운 점, 아쉬운 점**
 - **`프로젝트 전체`**
     - **`풀스텍을 다뤄보면서 웹 전반적인 흐름을 이해할 수 있었습니다`**
@@ -37,7 +58,9 @@
         - 객체 프로퍼티에 접근할 때 .말고도 [""]라는 방식도 자주 사용됩니다.
         - 백에서 다 가져와서 filter로 걸러주는 방식
         - `CSS JAVASCRIPT 기능별, 영역별 모듈화`
+        - `mongoDB는 noSql이라서 field의 속성이 document마다 다를 수 있다는 점을 알게 되었다.`
 - **`BACK-END`**
+            - findOne함수로 가장 위의 document를 반환했는데 첫 번째 document를 제외한 다른 모든 document의 field들이 같아서 첫 번째도 같을 줄 알고 에러를 쉽게 찾을 수 없었다.
     - **`어려웠던 점`**
         - `수 많은 mongoose라이브러리 db 쿼리문`
         -  `다양한 res,req객체`

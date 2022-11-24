@@ -48,15 +48,18 @@
                         <a href="/index">home</a>
                     </li>
                     <li class="list">
-                        <a href="/new/index">signup</a>
+                        <% if(isAuthenticated){ %> <!--로그인이 된 경우 -->
+                            <a href="/logout" class="nav-link1">logout</a>
+                          <% } else { %>
+                            <a href="/local/index">login</a>
+                          <% } %>
                     </li>
                     <li class="list">
-                        <a class="login" href="">
-                            <%= isLogined %>
-                        </a>
-                    </li>
-                    <li class="list">
-                        <a href="/my-pages/index">mypage</a>
+                        <% if(isAuthenticated){ %> <!--로그인이 된 경우 -->
+                            <a href="/mypage/<%= currentUser.email %>">mypage</a>
+                          <% } else { %>
+                            <a href="/new/index">signup</a>
+                          <% } %>
                     </li>
                 </ul>
             </div>

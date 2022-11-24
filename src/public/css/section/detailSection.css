@@ -15,7 +15,7 @@
 .img__box{
     width : 80%;
     height : 80%;
-    border : 1px solid black;
+    /* border : 1px solid black; */
 }
 .img__box > img{
     width : 100%;

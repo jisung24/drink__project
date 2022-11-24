@@ -1,5 +1,5 @@
 .testSection{
-    background-color: rgb(184, 184, 245);
+    background-color: #dddddd;
     display : flex;
 }
 .testSection > .test__start{
@@ -13,7 +13,7 @@
 .test__start > .form{
     width : 400%;
     height : 100%;
-    /* /* border : 1px solid black; */ */
+    /* border : 1px solid black; */
     display : flex;
     /* overflow-x: hidden; */
 }
